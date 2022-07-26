@@ -22,7 +22,7 @@ clearButton.addEventListener("click",clearAll);
 
 function clearAll(){
                 //arayüzden silme
-    if(confirm("tümünü silmek ister misiniz?")){
+    if(confirm("Are you want to clear whole list?")){
        // todolist.innerHTML="";  //yavaş yöntem
             while (todolist.firstElementChild!=null){
                 todolist.removeChild(todolist.firstElementChild);
@@ -39,7 +39,7 @@ function filterTodos(e){
 
             if (text.indexOf (filterText)===-1){ //bulamadı
                 item.setAttribute("style","display : none !important");
-            }else{ //çalışmamasının sebebi bootstrapde önemli komutu var? bu yüzden bu kod çalıştırılmıyo. oyüzden önemli hale getirilmeli
+            }else{ //çalışmamasının sebebi bootstrap'de önemli komutu var? bu yüzden bu kod çalıştırılmıyo. oyüzden önemli hale getirilmeli
                 item.setAttribute("style","display : block");
             }
     })
@@ -57,7 +57,7 @@ function loadAllTodosToUI(){
 function deleteTodo(e){
     if (e.target.className==="fa fa-remove"){
         e.target.parentElement.parentElement.remove();
-        showAlert("success","Todo Silindi")
+        showAlert("success","To do Silindi")
         console.log(e.target.parentElement.parentElement.textContent)
         removeLocal(e.target.parentElement.parentElement.textContent);
     }
@@ -67,7 +67,7 @@ function addTodo(event){
     const newTodo = todoinput.value.trim();
     
     if (newTodo==="")
-    showAlert("danger","Lütfen bir yazı girin"); 
+    showAlert("danger","Please Write "); 
     else if(isHaveIt(newTodo)){
     showAlert("warning","Var olan bir yazı girdiniz");
     } 
